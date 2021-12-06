@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+    --font-family: 'Barlow Semi Condensed', sans-serif;
+    --font-size: 0.8125rem;
+    --voilet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-grayish-blue-transparent: hsla(217, 19%, 35%, 0.494);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    --white-transparent: hsla(0, 0%, 100%, 0.322);
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--light-grayish-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 37vh 37vh;
+    justify-content: center;
+    width: 100%;
+    margin: 6rem;
+}
+
+div.item {
+    margin: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 5%;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 10px 2px var(--light-gray);
+}
+
+div.pad_10 {
+    padding: 10%;
+}
+
+.grid__1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: var(--voilet);
+    background-image: url("images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: top right 20%;
+}
+
+.grid__2 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    background: var(--very-dark-grayish-blue);
+}
+
+.grid__3 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background: white;
+}
+
+
+.grid__4 .item__header__info__position,
+.grid__3 .item__header__info__position {
+    color: var(--light-gray);
+}
+
+.grid__4 .item__header__info__name,
+.grid__4 .item__subject,
+.grid__3 .item__header__info__name,
+.grid__3 .item__subject {
+    color: var(--very-dark-grayish-blue);
+}
+
+.grid__4 {
+    background: white;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.grid__5 {
+    background: var(--very-dark-blackish-blue);
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.grid__5 .item__header__image {
+    border-radius: 50%;
+    border: 0.1rem solid var(--voilet);
+}
+
+.grid__2 .item__header__image,
+.grid__3 .item__header__image,
+.grid__4 .item__header__image {
+    border: none;
+}
+
+
+.item__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.item__header__image {
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 0.1rem solid #800080ad;
+}
+
+.item__header__image img {
+    height: 100%;
+    width: 100%;
+}
+
+.item__header__info__name {
+    color: white;
+    font-family: var(--font-family);
+}
+
+.item__header__info__position {
+    color: var(--white-transparent);
+}
+
+.item__subject {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.item__message {
+    color: var(--light-gray);
+}
+
+@media screen and (max-width: 56rem) {
+    main {
+        height: unset;
+    }
+
+    .grid {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto auto;
+        justify-content: center;
+        width: 90%;
+        margin: 1rem 0.5rem;
+    }
+
+    div.grid__1 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        padding: 10%;
+    }
+
+    div.grid__2 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    div.grid__4 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    div.grid__5 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+        padding: 10%;
+    }
+
+    div.grid__3 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
+
+
+}
